@@ -3,6 +3,7 @@ package ru.samsung.itschool.mdev.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
+    private Button button4;
     private TextView textView;
     private int counter = 0;
 
@@ -21,13 +23,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button = findViewById(R.id.PoplaukhinId);
-
+        button4 = findViewById(R.id.button4);
         textView = findViewById(R.id.textView2);
         button.setOnClickListener(view -> {
             counter++;
             String result = "Вы тыкнули на мою кнопочку " + Integer.toString(counter);
             textView.setText(result);
                 });
+        button4.setOnClickListener(view -> {
+            button4.setBackgroundColor(Color.BLACK);
+        });
     }
 
     public void doPlay(View v)
